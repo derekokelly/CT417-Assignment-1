@@ -39,6 +39,6 @@ public class Module {
         for (Student s : studentList) {
             info += s.getUsername();
         }
-        return this.name + " " + this.id + "\n" + info + "\n";
+        return this.name + " " + this.id + "\n" + "Students: \n" + info + "\n";
     }
 }

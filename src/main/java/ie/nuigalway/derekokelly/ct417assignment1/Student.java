@@ -21,7 +21,7 @@ public class Student {
     }
     
     public String getUsername() {
-        return this.name.replaceAll("\\s","") + this.age; // removes whitespace from name
+        return this.name.replaceAll("\\s","") + this.age + "\n"; // removes whitespace from name
     }
     public String getName() {
         return this.name;

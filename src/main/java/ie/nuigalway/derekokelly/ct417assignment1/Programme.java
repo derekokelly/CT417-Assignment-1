@@ -40,4 +40,14 @@ public class Programme {
         return this.endDate;
     }
     
+    @Override
+    public String toString() {
+        String info = "";
+        
+        for (Module m : this.modules) {
+            info += m.toString();
+        }
+        return "Programme: " + this.getName() + "\nModules: \n" + info + "Start date: " + this.getStartDate() + "\nEnd date: " + this.getEndDate() + "\n";
+    }
+    
 }
