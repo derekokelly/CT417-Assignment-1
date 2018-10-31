@@ -32,4 +32,13 @@ public class Module {
     public void addStudent(Student s) {
         this.studentList.add(s);
     }
+    
+    @Override
+    public String toString() {
+        String info = "";
+        for (Student s : studentList) {
+            info += s.getUsername();
+        }
+        return this.name + " " + this.id + "\n" + info + "\n";
+    }
 }

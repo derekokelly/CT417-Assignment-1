@@ -5,6 +5,7 @@
  */
 package ie.nuigalway.derekokelly.ct417assignment1;
 
+import java.util.ArrayList;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.DateTimeFormat;
@@ -48,6 +49,27 @@ public class JUnitTest {
         
         String expectedResult = "JohnSmith21";
         String actualResult = s1.getUsername();
+        
+        assertEquals(expectedResult, actualResult);
+    }
+    
+    @Test
+    public void moduleTest() {
+        DateTimeFormatter format = DateTimeFormat.forPattern("dd/mm/yyyy");
+        DateTime dob = format.parseDateTime("09/12/1997");
+        Student s1 = new Student("John Smith", "21", "15123456", dob);
+        
+        
+        ArrayList<Student> studentList = new ArrayList<Student>();
+        studentList.add(s1);
+        Module module1 = new Module("Software Engineering", "CT417", studentList);
+        
+        String expectedResult = "";
+        for (Student s : studentList) {
+            expectedResult += module1.getName() + " " + module1.getID() + "\n" + s1.getUsername() + "\n";
+        }
+        
+        String actualResult = module1.toString();
         
         assertEquals(expectedResult, actualResult);
     }
